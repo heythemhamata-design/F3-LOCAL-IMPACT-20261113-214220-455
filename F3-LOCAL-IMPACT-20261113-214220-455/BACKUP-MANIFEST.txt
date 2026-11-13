@@ -1,0 +1,117 @@
+MONSTER AI COMMAND CENTER - VERIFIED PRE-MIGRATION BACKUP
+CreatedLocal: 2026-11-13 21:02:36 +01:00
+ProjectSource: C:\Users\home\MONSTER-AI-COMMAND-CENTER\frontend
+ProjectBackup: C:\Users\home\MONSTER-AI-BACKUPS\MONSTER-PREFLIGHT-BACKUP-20261113-210136-996\frontend
+VoiceSource: C:\OmniChat
+VoiceBackup: C:\Users\home\MONSTER-AI-BACKUPS\MONSTER-PREFLIGHT-BACKUP-20261113-210136-996\OmniChat
+BackupDirectory: C:\Users\home\MONSTER-AI-BACKUPS\MONSTER-PREFLIGHT-BACKUP-20261113-210136-996
+GitBranch: security/patch-dependencies
+GitHEAD: 44df00b2196dff2dd5da5f04b9210bc2508d948e
+GitStatusBeforeAndAfter: IDENTICAL
+ProjectFilesModified: FALSE
+GitStateModified: FALSE
+DatabaseSchemaOrRowsModified: FALSE
+DockerConfigurationModified: FALSE
+RegistryChanged: FALSE
+DependenciesInstalled: FALSE
+SourceReparsePoints: NONE
+ProjectFiles: 24848
+ProjectBytes: 691826516
+VoiceFiles: 8569
+VoiceBytes: 132143169
+Database: monster_ai
+DatabaseUser: monster_ai
+DatabaseBytesAtPreflight: 9074367
+DatabaseDumpPath: C:\Users\home\MONSTER-AI-BACKUPS\MONSTER-PREFLIGHT-BACKUP-20261113-210136-996\PostgreSQL\monster_ai.dump
+DatabaseDumpBytes: 132114
+DatabaseDumpSHA256: 423232BB12C734F7CE05EDA5DAA0789B01BFD7330EC8A9C0FB9AD1A34990A692
+pg_dump: pg_dump (PostgreSQL) 18.6 (Debian 18.6-1.pgdg12+2)
+pg_restore: pg_restore (PostgreSQL) 18.6 (Debian 18.6-1.pgdg12+2)
+
+CRITICAL SOURCE HASH VERIFICATION:
+PASS 54C7477C89E78D89D77CC733197989B164182E76029F6C9101302314975B26DD  package.json
+PASS B1055F5CA1FC6ED7566B848900E3CA5C789E596A8F8BD826433CB4BF57D512BE  package-lock.json
+PASS 1F12ACB5C6253675358A6FBDB79FBD146ED77B814B09647B1CAE618033C6A970  tsconfig.json
+PASS 014585AFC246FEC7185568849A014DDC6C64DCE7445F95239AB013735E56B73F  next.config.mjs
+PASS 3ECD5935EECF6877F74DE8184EBEF8A9582ED37D1ADB7D5F56CF436DF0099B83  lib\ai\tool-executor.ts
+PASS E1BB7534DCFCE6254475ED99D089C856C2BDE2EDEB847EBB86FFCF87AD8545A8  lib\ai\tool-policy.ts
+PASS 241394FE1F4BE6484F6E1C6435038EF6EC190268150D57BEAA5D43BD2C538905  lib\agents\runtime.ts
+PASS F17E658FC0ED67DED41284CB565136C5F3ECFF05FA202BA16C26CC18C5FA9E6B  lib\tasks\queue.ts
+PASS CC4830A78D0AFCCAD605377DDCF2A4C2D852CEA0BB4C747A71626FC85D829D08  lib\tasks\orchestrator.ts
+PASS FFC04C108B96630AEA614EFCFAB638A029EA4649B15E0FDBF8BFEAE7BD9702D2  lib\tasks\lease-recovery.ts
+PASS 21530243030846AC693DCE832CA2DCA7D73340EE9BFB573DC7C2D9639FDB3460  lib\tasks\retry-policy.ts
+PASS 3D04FB1CD4302B660D26DE0DE03F7BDFDED0F26A75688DE1B619E21AB46D1C1C  scripts\task-worker.ts
+PASS F49A30272B405B018F28DA82B37CC4DDD423297A021F0C59D55F2BFA1C010FD1  scripts\test-researcher-web-search.ts
+PASS FEC00FDCD55B5628B2EDFDF10B58A871EDA436150DDB5F147093B54B567DDF47  .git\HEAD
+PASS 848B8C7F840285BC8EA9E705942C37D918E4C75F82B3E443B90560B48CB5E490  .git\index
+
+GIT STATUS --SHORT --BRANCH:
+## security/patch-dependencies
+MM .gitignore
+AM app/api/agents/route.ts
+AM app/api/agents/run/route.ts
+AM app/api/ai/chat/route.ts
+M  app/api/weather/route.ts
+ M app/page.tsx
+ M components/ApexHeroOrb.tsx
+M  components/ApexOverviewPanel.tsx
+ M components/ApexWorld.tsx
+AM compose.yaml
+A  db/init/001_initial_schema.sql
+A  lib/agents/registry.ts
+AM lib/agents/runtime.ts
+AM lib/ai/models.ts
+AM lib/ai/omniroute.ts
+AM lib/ai/tool-executor.ts
+A  lib/db/postgres.ts
+AM lib/memory/store.ts
+AM lib/tasks/orchestrator.ts
+AM lib/tasks/queue.ts
+AM lib/workspace/tools.ts
+M  package-lock.json
+M  package.json
+A  scripts/monster-memory-postgres-smoke.cjs
+AM scripts/orchestrator-plan.ts
+A  scripts/orchestrator-status.ts
+A  scripts/task-add.ts
+A  scripts/task-cancel.ts
+A  scripts/task-status.ts
+AM scripts/task-worker.ts
+?? app/api/auth/
+?? app/api/orchestrator/
+?? app/api/tasks/
+?? app/login/
+?? components/LoginForm.tsx
+?? components/LogoutButton.tsx
+?? components/TaskConsole.tsx
+?? components/useApexLiveVoice.ts
+?? db/migrations/
+?? lib/ai/omniroute.ts.pre-quota-fix-20261103-174458.bak
+?? lib/ai/tool-executor.ts.backup-tool-executor-v2-20261106-201636-b69c96102fee4bb6b3ef1c921f5ee2fe
+?? lib/ai/tool-executor.ts.backup-tool-executor-v2-20261106-201834-529611fa24bd4989bc3b3dd323f07c95
+?? lib/ai/tool-executor.ts.backup-tool-executor-v2.2-20261106-202412-800305d0dbe94c0b8eee28a5e26119fe
+?? lib/ai/tool-policy.ts
+?? lib/security/
+?? lib/tasks/app_api_tasks_voice_route.ts
+?? lib/tasks/lease-recovery.ts
+?? lib/tasks/orchestrator.ts.pre-quota-fix-20261103-174458.bak
+?? lib/tasks/retry-policy.ts
+?? scripts/monster-auth-smoke.ts
+?? scripts/setup-monster-auth.ts
+?? scripts/setup-monster-db.ps1
+?? scripts/task-worker.ts.before-fencing-20261101-213859.bak
+?? scripts/task-worker.ts.pre-quota-fix-20261103-174458.bak
+?? scripts/test-agent-governance.ts
+?? scripts/test-cross-tool-side-effect-identity.ts
+?? scripts/test-researcher-web-search.ts
+?? scripts/test-retry-policy.ts
+?? scripts/test-worker-lease-recovery-guard.ts
+?? scripts/test-worker-retry-guard.ts
+?? scripts/test-workspace-replay-post-effect-crash.ts
+?? scripts/test-workspace-replay.ts
+
+RESTORE NOTES:
+1. Keep this backup private; the full local project tree may contain credentials in .env.local.
+2. Restore source only after stopping MONSTER services and verifying the target path.
+3. Restore the PostgreSQL custom dump with pg_restore into a separately verified target; do not overwrite the live database blindly.
+4. This backup is a pre-change recovery point, not permission to replace or reset the active working tree.

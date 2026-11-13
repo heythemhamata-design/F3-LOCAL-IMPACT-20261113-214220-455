@@ -1,0 +1,31 @@
+name: monster-ai
+
+services:
+  postgres:
+    image: pgvector/pgvector:0.8.7-pg18-bookworm
+    container_name: monster-ai-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${MONSTER_DB_NAME:?MONSTER_DB_NAME must be set in .env.local}
+      POSTGRES_USER: ${MONSTER_DB_USER:?MONSTER_DB_USER must be set in .env.local}
+      POSTGRES_PASSWORD: ${MONSTER_DB_PASSWORD:?MONSTER_DB_PASSWORD must be set in .env.local}
+      PGDATA: /var/lib/postgresql/18/docker
+    ports:
+      - "127.0.0.1:5432:5432"
+    shm_size: 128mb
+    mem_limit: 1g
+    cpus: 2.0
+    volumes:
+      - monster_pgdata:/var/lib/postgresql
+      - ./db/init/001_initial_schema.sql:/docker-entrypoint-initdb.d/001_initial_schema.sql:ro
+      - ./db/migrations/002_api_security.sql:/docker-entrypoint-initdb.d/002_api_security.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+
+volumes:
+  monster_pgdata:
+    name: monster-ai-postgres-data
